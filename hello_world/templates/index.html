@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block body %}
+    <h1 id="my-text" onclick="showAlert();">Pagina principal</h1>
+    <img src="{{url_for('static', filename='img/js.png')}}" alt="">
+    
+
+    {% for person in people %}
+    <div class="alert alert-primary" role="alert">
+      Nombre: {{person["name"]}} - Edad {{person["age"]}}
+      </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<style>
+  .carousel-item{
+      min-height: 400px;
+      background-size: cover;
+  }
+  
+</style>
+</head>
+      <div id="carouselExampleIndicators" class="carousel slide card" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" >
+          <img src="{{url_for('static',filename='img/login.jpg')}}"  alt="" class="display" style="width : 1500px; height: 600px; border : 1px; top: 0; left: 0; position: relative; background-size: cover;"/>
+        </div>
+
+        <br><br><br>
+        <div class="container" style="background-color: aqua;" >
+          <div class="col-sm-4">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                  <div class="form-group" >
+                    
+            <form onsubmit="return validateForm()" method="POST" action="/login"  >
+                <div class="mb-3" >
+                  <label for="exampleInputEmail1" class="form-label" >Correo electronico</label>
+                  <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                  <div id="emailHelp" class="form-text"></div>
+                </div>
+                <select name="rol"  class="form-select" aria-label="Default select example">
+                    <option selected>Selecciona</option>
+                    <option value="Anfi">Anfitrion</option>
+                    <option value="invitado">invitado</option>
+                   
+                  </select>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                  <input name="password" type="password" class="form-control" id="password">
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Entrar</button>
+              </form>
+        </div>
+      </div>
+        </div>
+            </div>
+           
+
+
+        
+    
+
+  
+</body>
+</html>
+
+
+{% endblock %}

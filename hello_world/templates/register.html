@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+
+<div id="carouselExampleIndicators" class="carousel slide card" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" >
+      <img src="{{url_for('static',filename='img/login.jpg')}}"  alt="" class="display" style="width : 1500px; height: 600px; border : 1px; top: 0; left: 0; position: relative; background-size: cover;"/>
+    </div>
+
+    <br>
+    <div class="container" >
+      <div class="col-sm-4">
+        <div class="card shadow-lg">
+            <div class="card-body">
+              <div class="form-group" >
+<div class="container">
+
+<form method="POST" action="{{url_for('register')}}">
+    <div class="mb-3">
+    
+      <label for="exampleInputEmail1" class="form-label">Nombre</label>
+      <input type="text" class="form-control" name="fullname" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text"></div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Identificacion</label>
+      <input type="number" class="form-control" name="identification">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Ciudad</label>
+      <input type="text" class="form-control" name="city">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Pais</label>
+      <input type="text" class="form-control" name="country">
+    </div>
+    <select name="rol"  class="form-select" aria-label="Default select example">
+      <option selected>Selecciona</option>
+      <option value="Anfi">Anfitrion</option>
+      <option value="invitado">invitado</option>
+     
+    </select>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+    <input name="password" type="password" class="form-control" id="password">
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Registro</button>
+   
+    
+  </form>
+  
+</div>
+
+
+{% endblock %}
